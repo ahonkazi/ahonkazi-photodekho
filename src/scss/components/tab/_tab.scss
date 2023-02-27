@@ -1,0 +1,119 @@
+
+
+    .tab-wrapper {
+        background-color: #fff;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 20px;
+        padding: 0px 32px;
+        height: 500px;
+        overflow-y: auto;
+        padding-bottom: 16px !important;
+        width: 550px;
+        scrollbar-width: thin;
+        scrollbar-color: orangered rgb(196, 193, 187);
+
+
+        .tab-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            // gap: 16px;
+            position: sticky !important;
+            top: 0;
+            z-index: 10;
+            background-color: #fff;
+
+            .tab-button {
+                padding: 16px 24px;
+                background-color: hsl(0, 0%, 7%);
+                outline: none;
+                color: white;
+                transition: all 300ms;
+                border: 0;
+                position: relative;
+                overflow: hidden;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    height: 2.5px;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    transition: all 300ms;
+                    background-color: orangered;
+                    transform: translateX(-120%);
+
+                }
+
+
+                &:hover {
+                    opacity: 0.8;
+                }
+
+                &#active {
+                    opacity: 0.8;
+
+
+                    &::after {
+                        transform: translateX(0px);
+
+                    }
+                }
+            }
+        }
+
+        .tab-body {
+            padding: 24px;
+            position: relative;
+            margin: 16px 0px;
+
+            .tab-item {
+                position: absolute;
+                left: 0;
+                display: none;
+                padding-bottom: 16px;
+
+                p {
+                    opacity: 0.7;
+                }
+
+                &#active {
+                    display: block;
+                    animation-name: slideFromLeft;
+                    animation-duration: 200ms;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: ease-in-out;
+                }
+            }
+        }
+
+    }
+
+
+
+
+@media screen and (max-width:700px) {
+    .tab-wrapper {
+        width: 500px !important;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .tab-wrapper {
+        width: 350px !important;
+    }
+}
+
+// animations
+@keyframes slideFromLeft {
+    0%{
+        transform: translateX(-50px);
+    }
+    98%{
+        transform: translateX(5px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}

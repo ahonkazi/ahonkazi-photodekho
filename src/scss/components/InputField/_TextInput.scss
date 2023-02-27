@@ -1,0 +1,50 @@
+.input-field-wrapper {
+    padding: 18px 16px;
+    border: 1px solid;
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+
+    .lebel {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        left: 0;
+        padding: 0px 4px;
+        margin-left: 12px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .input-inner {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+
+        input {
+
+            /* Montserrat/Regular/16px */
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            border: none;
+            outline: none;
+            width: 95%;
+        }
+
+        svg,
+        i {
+            height: 16px;
+            width: 16px;
+            font-size: 16px;
+        }
+    }
+}
+
+

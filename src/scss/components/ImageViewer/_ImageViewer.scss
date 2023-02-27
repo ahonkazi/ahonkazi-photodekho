@@ -1,0 +1,238 @@
+.viewer-wrapper {
+    width: 600px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 50px;
+    overflow: hidden;
+
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .App {
+        padding: 55px 2px;
+    }
+
+    .viewer-wrapper {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .search-img {
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+
+        button {
+            margin-left: 0px !important;
+        }
+    }
+}
+
+.image-viewer {
+    overflow: hidden;
+    width: 100%;
+
+    .viewer-display {
+        position: relative;
+        height: 350px;
+        overflow: hidden;
+        width: 100%;
+
+        .item {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0%;
+
+            img {
+                width: 100%;
+                height: 350px;
+
+            }
+        }
+    }
+
+    .viewer-controller {
+        height: 100px;
+        width: 100%;
+        margin-top: 24px;
+        position: relative;
+
+        .slide-buttons {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            height: fit-content;
+
+        }
+
+        .button-wrappers {
+            position: relative;
+            height: 60px;
+            width: 100%;
+            margin-top: 24px;
+            // overflow: hidden;
+
+            .control-item {
+                position: absolute;
+                height: 60px;
+                width: 100%;
+                left: 0%;
+                width: 60px;
+                cursor: pointer;
+                transition: all 300ms;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+}
+
+.slide-buttons {
+    button {
+        padding: 10px;
+        background-color: rgb(209, 207, 207);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 6px;
+        transition: all 300ms;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.disable {
+    cursor: not-allowed;
+}
+
+.search_image {
+    padding: 16px;
+    border-radius: 4px;
+    border: none;
+    border: 1px solid #bbbbbb;
+    outline: none;
+    margin-bottom: 16px;
+}
+
+.search-img {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+
+    button {
+        padding: 12px;
+        border-radius: 4px;
+        border: none;
+        border: 1px solid #bbbbbb;
+        outline: none;
+        margin-bottom: 16px;
+        margin-left: 16px;
+        background-color: #111;
+        color: white;
+        font-size: 16px;
+        transition: all 300ms;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.title {
+    text-align: center;
+    padding: 16px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.not-found {
+    color: rgb(255, 0, 60);
+    text-align: center;
+    font-family: 'Hind Siliguri', sans-serif;
+    margin-top: 60px;
+}
+
+.control-item.active {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(81, 7, 218, 0.195);
+        z-index: 200;
+        top: 0;
+        left: 0;
+        border-bottom: 5px solid rgb(81, 7, 218);
+        border-radius: 5px;
+        transition: all 300ms;
+    }
+}
+
+
+.wrapper {
+    position: relative;
+    cursor: pointer;
+    &:hover .download-wrapper{
+        opacity: 1;
+        .download{
+            animation-name:slideUp;
+            animation-duration: 250ms;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+@keyframes slideUp {
+    0%{
+        transform: translateY(100px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.download-wrapper {
+    position: absolute;
+    z-index: 500;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(81, 7, 218, 0.46);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 300ms;
+
+    .download {
+        font-size: 16px;
+        padding: 16px;
+        background-color: #111;
+        color: white;
+        border-radius: 5px;
+        transition: all 300ms;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+}

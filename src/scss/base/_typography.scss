@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "TradeGrothicBold";
+    src: url('/src/assets/fonts/TradeGothicLTStd-BoldExt.otf');
+}
+
+@font-face {
+    font-family: "TradeGrothicRegular";
+    src: url('/src/assets/fonts/Trade\ Gothic\ LT\ Std\ Extended.otf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+p,
+button,
+input,
+select,
+textarea,
+li,
+a {
+    font-family: 'Montserrat';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'TradeGrothicBold';
+
+}
+
+.text-blackish-green {
+    color: var(--color-blackish-green);
+}
+
+.text-mint-green {
+    color: var(--color-mint-green);
+}
+
+.bg-white {
+    background-color: white;
+}
